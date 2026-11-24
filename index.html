@@ -12,7 +12,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Finanzas</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="El valor del dinero en el tiempo, las tasas, el VAN y la TIR, los estados financieros, el costo y la estructura de capital y la valoración de empresas, con calculadoras y flujos de caja que se mueven.">
+<meta name="description" content="El valor del dinero en el tiempo, el VAN y la TIR, los estados financieros, el costo de capital y la valoración de empresas, junto con los sistemas que hacen las finanzas de una empresa: el ERP, la facturación electrónica, la tesorería, la conciliación y el cierre automatizados, la planificación, los tableros y el modelo financiero en hoja de cálculo y en Python.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
@@ -31,16 +31,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="hero">
   <span class="eyebrow">Curso visual e interactivo · Industrias y finanzas</span>
-  <h1>Un peso hoy vale más que un peso mañana, y de esa frase sale el valor de cualquier empresa</h1>
-  <p class="lede">Pedir un préstamo, comprar una máquina, abrir una sucursal o vender la empresa son la misma pregunta con distinto tamaño: ¿cuánto valen hoy unos flujos de dinero que llegan después y con riesgo? Este curso construye la respuesta paso a paso, del interés compuesto al flujo de caja descontado, y en cada capítulo hay una calculadora o un flujo de caja que el lector mueve para ver cómo cambia el valor.</p>
+  <h1>Un peso hoy vale más que un peso mañana, y hoy ese peso vive en un ERP, viaja por una API y se concilia solo</h1>
+  <p class="lede">Pedir un préstamo, comprar una máquina o vender la empresa son la misma pregunta con distinto tamaño: ¿cuánto valen hoy unos flujos de dinero que llegan después y con riesgo? Este curso construye la respuesta, del interés compuesto al flujo de caja descontado, y muestra a la vez dónde viven esos números en una empresa real: el libro mayor del ERP, la factura electrónica, el extracto bancario que entra solo a la tesorería, el cierre de mes automatizado y el modelo financiero escrito en una hoja de cálculo o en Python.</p>
 </header>
 
 <section>
   <h2>Cómo usar este curso</h2>
   <div class="prose">
-    <p><b>Estado.</b> El curso está en preparación. La <a href="temario.html">tabla de contenido</a> ya tiene los 15 capítulos con sus secciones y sus laboratorios, y está en revisión.</p>
-    <p><b>Para quién es.</b> Estudiantes universitarios y profesionales de cualquier carrera que necesitan decidir con números: ingeniería, administración, economía, sistemas. Basta el álgebra del bachillerato y una hoja de cálculo; las fórmulas se nombran, se explican y se mueven en los laboratorios. Los instrumentos (bonos, acciones, derivados) están en Inversiones; la derivación del CAPM y los modelos matemáticos, en Finanzas cuantitativas; cómo opera un banco por dentro, en Cómo funciona un banco.</p>
-    <p><b>Cómo está hecho.</b> Una misma empresa ficticia recorre el curso: una tostadora de café que nace con un préstamo, evalúa comprar una segunda tostadora, publica sus estados financieros, calcula su costo de capital, decide cuánta deuda tomar y al final recibe una oferta de compra que hay que valorar. Los laboratorios corren en la página: se arrastra una tasa, se cambia un flujo o un supuesto y se ve el valor recalculado. Las prácticas usan una hoja de cálculo o Python con datos públicos. Los casos públicos (Enron, la crisis de 2008, AOL y Time Warner) aparecen donde enseñan algo.</p>
+    <p><b>Estado.</b> El curso está en preparación. La <a href="temario.html">tabla de contenido</a> ya tiene los 20 capítulos con sus secciones y sus laboratorios, y está en revisión.</p>
+    <p><b>Para quién es.</b> Estudiantes universitarios y profesionales de cualquier carrera que deciden con números o que construyen los sistemas del área financiera: ingeniería, sistemas, administración, economía. Basta el álgebra del bachillerato y una hoja de cálculo; un poco de Python ayuda en las prácticas, pero no es obligatorio. Los instrumentos (bonos, acciones, derivados) están en Inversiones; la derivación del CAPM, en Finanzas cuantitativas; los rieles de pago y los mensajes bancarios, en Cómo funciona un banco; las APIs, las bases de datos y los almacenes de datos a fondo, en Backend y APIs, Bases de datos e Ingeniería de datos.</p>
+    <p><b>Cómo está hecho.</b> Una tostadora de café ficticia recorre el curso: nace con un préstamo, evalúa comprar una segunda tostadora, monta su ERP, emite facturas electrónicas, cobra y paga por el banco, cierra el mes, calcula su costo de capital, decide cuánta deuda tomar y al final recibe una oferta de compra que hay que valorar con un modelo hecho en código. Los laboratorios corren en la página: se arrastra una tasa, se registra una venta y se ven los asientos que genera, se decodifica una factura, se concilia un extracto o se cambia un supuesto del modelo y se ve el valor recalculado. Las prácticas usan herramientas gratuitas: LibreOffice Calc o Google Sheets, Python, un ERP de código abierto en local, contabilidad en texto plano y datos públicos de SEC EDGAR y FRED. Las plataformas comerciales aparecen solo como ejemplos del mercado. Los casos públicos (Enron, la crisis de 2008, AOL y Time Warner, el error de hoja de cálculo de Reinhart y Rogoff) aparecen donde enseñan algo.</p>
   </div>
 </section>
 
@@ -52,41 +52,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <details class="stage" id="parte-1" open><summary><h2><span class="pn">Parte 1</span> El valor del dinero en el tiempo</h2><span class="cuenta" data-etapa-cuenta="1"></span></summary>
   <div class="mods">
-    <div class="mod soon" data-id="valor-del-dinero-en-el-tiempo"><span class="n">01</span><b>El valor del dinero en el tiempo</b><p>Por qué un peso de hoy no es igual a uno de mañana, y cómo se lleva el dinero al futuro y se trae al presente.</p></div>
-    <div class="mod soon" data-id="tasas-de-interes"><span class="n">02</span><b>Tasas de interés: nominal, efectiva, real</b><p>La misma tasa escrita de cinco maneras, y por qué confundirlas cuesta dinero.</p></div>
-    <div class="mod soon" data-id="anualidades-y-prestamos"><span class="n">03</span><b>Anualidades, perpetuidades y préstamos</b><p>Series de pagos iguales o crecientes, y las tablas de amortización que hay detrás de cada cuota.</p></div>
+    <div class="mod soon" data-id="valor-del-dinero-en-el-tiempo"><span class="n">01</span><b>El valor del dinero en el tiempo</b><p>Por qué un peso de hoy no es igual a uno de mañana, cómo se lleva el dinero al futuro y al presente, y cómo se representa el dinero en un programa.</p></div>
+    <div class="mod soon" data-id="tasas-de-interes"><span class="n">02</span><b>Tasas de interés: nominal, efectiva, real y la convención de días</b><p>La misma tasa escrita de cinco maneras, la convención de días que usa cada sistema y por qué confundirlas cuesta dinero.</p></div>
+    <div class="mod soon" data-id="anualidades-y-prestamos"><span class="n">03</span><b>Anualidades, préstamos y el motor de amortización</b><p>Series de pagos iguales o crecientes, las tablas de amortización detrás de cada cuota y cómo las genera un sistema de crédito.</p></div>
   </div>
 </details>
 
 <details class="stage" id="parte-2" open><summary><h2><span class="pn">Parte 2</span> Decidir inversiones</h2><span class="cuenta" data-etapa-cuenta="2"></span></summary>
   <div class="mods">
-    <div class="mod soon" data-id="van-y-tir"><span class="n">04</span><b>VAN, TIR y otros criterios de decisión</b><p>El valor actual neto como regla de oro, la TIR como atajo con trampas y los criterios que conviene conocer para no usarlos solos.</p></div>
-    <div class="mod soon" data-id="flujos-de-caja-del-proyecto"><span class="n">05</span><b>Armar el flujo de caja de un proyecto</b><p>Qué entra y qué no en el flujo: incrementales, costos hundidos, depreciación, impuestos y capital de trabajo.</p></div>
-    <div class="mod soon" data-id="riesgo-del-proyecto"><span class="n">06</span><b>El riesgo del proyecto: sensibilidad, escenarios y opciones reales</b><p>Qué pasa con el VAN si los supuestos fallan, y cuánto vale poder esperar, ampliar o abandonar.</p></div>
+    <div class="mod soon" data-id="van-y-tir"><span class="n">04</span><b>VAN, TIR y otros criterios de decisión</b><p>El valor actual neto como regla de oro, la TIR como atajo con trampas y cómo los calculan las hojas de cálculo y las librerías.</p></div>
+    <div class="mod soon" data-id="flujos-de-caja-del-proyecto"><span class="n">05</span><b>Armar el flujo de caja de un proyecto</b><p>Qué entra y qué no en el flujo: incrementales, costos hundidos, depreciación, impuestos y capital de trabajo, y de qué sistemas salen esos datos.</p></div>
+    <div class="mod soon" data-id="riesgo-del-proyecto"><span class="n">06</span><b>El riesgo del proyecto: sensibilidad, escenarios, simulación y opciones reales</b><p>Qué pasa con el VAN si los supuestos fallan, cómo se simula en una hoja o en Python, y cuánto vale poder esperar, ampliar o abandonar.</p></div>
   </div>
 </details>
 
-<details class="stage" id="parte-3" open><summary><h2><span class="pn">Parte 3</span> Leer una empresa</h2><span class="cuenta" data-etapa-cuenta="3"></span></summary>
+<details class="stage" id="parte-3" open><summary><h2><span class="pn">Parte 3</span> Los sistemas del área financiera</h2><span class="cuenta" data-etapa-cuenta="3"></span></summary>
   <div class="mods">
-    <div class="mod soon" data-id="estados-financieros"><span class="n">07</span><b>Los estados financieros</b><p>Balance, estado de resultados y flujo de efectivo: qué dice cada uno y cómo se conectan entre sí.</p></div>
-    <div class="mod soon" data-id="analisis-financiero"><span class="n">08</span><b>Análisis financiero: razones y DuPont</b><p>Las razones de liquidez, endeudamiento, eficiencia y rentabilidad, y cómo descomponer el rendimiento del patrimonio.</p></div>
-    <div class="mod soon" data-id="planificacion-y-capital-de-trabajo"><span class="n">09</span><b>Planificación financiera y capital de trabajo</b><p>Proyectar los estados, calcular cuánto financiamiento hace falta y administrar el efectivo del día a día.</p></div>
+    <div class="mod soon" data-id="erp-y-libro-mayor"><span class="n">07</span><b>El ERP: el libro mayor y los módulos que lo alimentan</b><p>La partida doble como estructura de datos, el plan de cuentas y cómo cada venta, compra o nómina genera sus asientos sin que nadie los escriba.</p></div>
+    <div class="mod soon" data-id="facturacion-electronica-y-cuentas"><span class="n">08</span><b>Facturación electrónica, cuentas por cobrar y cuentas por pagar</b><p>La factura como documento firmado que valida el fisco, y los procesos de cobrar y pagar automatizados de punta a punta.</p></div>
+    <div class="mod soon" data-id="tesoreria-y-pagos"><span class="n">09</span><b>Tesorería: la posición de caja, la conexión con los bancos y los pagos</b><p>Cuánto dinero tiene la empresa hoy y en cada banco, cuánto tendrá en treinta días y cómo se mueve de forma segura.</p></div>
+    <div class="mod soon" data-id="conciliacion-y-cierre"><span class="n">10</span><b>Conciliación y cierre contable automatizados</b><p>Cruzar lo que dice el banco con lo que dice el libro, cerrar el mes en días y no en semanas, y los controles que hacen confiable el resultado.</p></div>
   </div>
 </details>
 
-<details class="stage" id="parte-4" open><summary><h2><span class="pn">Parte 4</span> Costo y estructura de capital</h2><span class="cuenta" data-etapa-cuenta="4"></span></summary>
+<details class="stage" id="parte-4" open><summary><h2><span class="pn">Parte 4</span> Leer, planear y medir una empresa</h2><span class="cuenta" data-etapa-cuenta="4"></span></summary>
   <div class="mods">
-    <div class="mod soon" data-id="costo-de-capital"><span class="n">10</span><b>El costo de capital (WACC)</b><p>Qué rendimiento exigen acreedores y accionistas, y cómo se combinan en la tasa con la que se descuentan los proyectos.</p></div>
-    <div class="mod soon" data-id="estructura-de-capital"><span class="n">11</span><b>Estructura de capital: cuánta deuda tomar</b><p>Modigliani y Miller, los impuestos, el costo de quebrar y por qué las empresas reales se endeudan como se endeudan.</p></div>
-    <div class="mod soon" data-id="dividendos-y-financiamiento"><span class="n">12</span><b>Dividendos, recompras y cómo se consigue el dinero</b><p>Qué hacer con las utilidades y de dónde sacar capital: crédito bancario, bonos, acciones y arrendamiento.</p></div>
+    <div class="mod soon" data-id="estados-financieros"><span class="n">11</span><b>Los estados financieros y su versión en datos (XBRL)</b><p>Balance, estado de resultados y flujo de efectivo: qué dice cada uno, cómo se conectan y cómo se publican para que una máquina los lea.</p></div>
+    <div class="mod soon" data-id="analisis-financiero"><span class="n">12</span><b>Análisis financiero: razones y DuPont</b><p>Las razones de liquidez, endeudamiento, eficiencia y rentabilidad, cómo se descompone el rendimiento del patrimonio y cómo calcularlas para muchas empresas a la vez.</p></div>
+    <div class="mod soon" data-id="planificacion-y-capital-de-trabajo"><span class="n">13</span><b>Planificación financiera, presupuesto y capital de trabajo</b><p>Proyectar los estados, armar el presupuesto con impulsores, saber cuándo faltará caja y qué plataformas se usan para planear.</p></div>
+    <div class="mod soon" data-id="datos-y-tableros-financieros"><span class="n">14</span><b>Datos y tableros financieros: del ERP al indicador</b><p>Cómo se sacan los datos del ERP, se ordenan en un almacén, se definen una sola vez los indicadores y se arman los tableros que mira la gerencia.</p></div>
   </div>
 </details>
 
-<details class="stage" id="parte-5" open><summary><h2><span class="pn">Parte 5</span> Valorar una empresa</h2><span class="cuenta" data-etapa-cuenta="5"></span></summary>
+<details class="stage" id="parte-5" open><summary><h2><span class="pn">Parte 5</span> Costo y estructura de capital</h2><span class="cuenta" data-etapa-cuenta="5"></span></summary>
   <div class="mods">
-    <div class="mod soon" data-id="flujo-de-caja-descontado"><span class="n">13</span><b>Valoración por flujo de caja descontado (DCF)</b><p>Proyectar el flujo libre, descontarlo con el WACC y sumar un valor terminal: el método que usan los analistas.</p></div>
-    <div class="mod soon" data-id="valoracion-relativa"><span class="n">14</span><b>Valoración relativa: múltiplos y comparables</b><p>Valorar por comparación: P/U, EV/EBITDA, precio sobre valor en libros, y cómo elegir buenos comparables.</p></div>
-    <div class="mod soon" data-id="fusiones-y-creacion-de-valor"><span class="n">15</span><b>Fusiones, adquisiciones y creación de valor</b><p>Cuándo una compra crea valor, cuánto pagar por las sinergias y cómo medir si una empresa crea valor año a año.</p></div>
+    <div class="mod soon" data-id="costo-de-capital"><span class="n">15</span><b>El costo de capital (WACC)</b><p>Qué rendimiento exigen acreedores y accionistas, cómo se combinan en la tasa de descuento y de qué datos públicos se estima.</p></div>
+    <div class="mod soon" data-id="estructura-de-capital"><span class="n">16</span><b>Estructura de capital, dividendos y cómo se consigue el dinero</b><p>Modigliani y Miller, los impuestos y el costo de quebrar, qué hacer con las utilidades y de dónde sacar capital, de un crédito a una oferta pública.</p></div>
+  </div>
+</details>
+
+<details class="stage" id="parte-6" open><summary><h2><span class="pn">Parte 6</span> Valorar una empresa con un modelo</h2><span class="cuenta" data-etapa-cuenta="6"></span></summary>
+  <div class="mods">
+    <div class="mod soon" data-id="modelo-financiero"><span class="n">17</span><b>El modelo financiero: de la hoja de cálculo a Python</b><p>Cómo se construye un modelo que otros puedan leer, probar y cambiar, y cuándo conviene pasarlo a código.</p></div>
+    <div class="mod soon" data-id="flujo-de-caja-descontado"><span class="n">18</span><b>Valoración por flujo de caja descontado (DCF)</b><p>Proyectar el flujo libre, descontarlo con el WACC y sumar un valor terminal: el método que usan los analistas, armado como modelo.</p></div>
+    <div class="mod soon" data-id="valoracion-relativa"><span class="n">19</span><b>Valoración relativa: múltiplos y comparables</b><p>Valorar por comparación: P/U, EV/EBITDA, precio sobre valor en libros, cómo elegir buenos comparables y de qué datos salen.</p></div>
+    <div class="mod soon" data-id="fusiones-y-creacion-de-valor"><span class="n">20</span><b>Fusiones, adquisiciones y creación de valor</b><p>Cuándo una compra crea valor, cuánto pagar por las sinergias, qué pasa con los sistemas al juntar dos empresas y cómo medir si una empresa crea valor año a año.</p></div>
   </div>
 </details>
 
